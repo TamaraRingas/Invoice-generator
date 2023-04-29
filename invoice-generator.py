@@ -1,15 +1,13 @@
 import openpyxl
-import datetime
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib import colors
+from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.pagesizes import letter
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
-#pdfmetrics.registerFont(TTFont('Arial', 'Arial.ttf'))
 pdfmetrics.registerFont(TTFont('VeraBd', 'VeraBd.ttf'))
 
-#import excel file
 wb = openpyxl.load_workbook('Invoices.xlsx')
 sheet = wb['Sheet1']
 
@@ -42,7 +40,7 @@ def create_invoice():
 
         ts = TableStyle([('GRID', (0,1), (-1,-1), 2 , colors.ReportLabBlue)       
         ])
-        ts.add('BACKGROUND', (0,1), (-1,-1), colors.ReportLabLightBlue)
+        ts.add('BACKGROUND', (0,1), (-1,-1), colors.Color(0.6484,0.8945,0.9648))
 
         table.setStyle(ts)
 
