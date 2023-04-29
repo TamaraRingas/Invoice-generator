@@ -42,3 +42,4 @@ def create_invoice():
 
         doc.build(elements)
 
+create_invoice()
