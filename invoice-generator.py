@@ -6,3 +6,5 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter, inch
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+
+pdfmetrics.registerFont(TTFont('Arial', 'Arial.ttf'))
